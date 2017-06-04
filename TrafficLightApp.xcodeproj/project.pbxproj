@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2077671EE1AAB5005769ED /* carrot.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2077641EE1AAB5005769ED /* carrot.png */; };
+		3A2077681EE1AAB5005769ED /* donut.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2077651EE1AAB5005769ED /* donut.png */; };
+		3A2077691EE1AAB5005769ED /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2077661EE1AAB5005769ED /* tomato.png */; };
+		3A20776B1EE252B3005769ED /* banana.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A20776A1EE252B3005769ED /* banana.png */; };
+		3AF7FBD91EA9CFC900D4CC93 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF7FBD81EA9CFC900D4CC93 /* CoreLocation.framework */; };
 		3C03A53F1DEDC706007B0DF7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C03A53E1DEDC706007B0DF7 /* AVFoundation.framework */; };
 		3C2B16131DEE24DE00783EC4 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2B16121DEE24DE00783EC4 /* CoreMedia.framework */; };
 		3CC225A21E1E9974006309BF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC225A11E1E9974006309BF /* opencv2.framework */; };
@@ -152,6 +157,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A2077641EE1AAB5005769ED /* carrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrot.png; sourceTree = "<group>"; };
+		3A2077651EE1AAB5005769ED /* donut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donut.png; sourceTree = "<group>"; };
+		3A2077661EE1AAB5005769ED /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomato.png; sourceTree = "<group>"; };
+		3A20776A1EE252B3005769ED /* banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banana.png; sourceTree = "<group>"; };
+		3AF7FBD81EA9CFC900D4CC93 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3C03A53E1DEDC706007B0DF7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3C2B16121DEE24DE00783EC4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		3CC225A11E1E9974006309BF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
@@ -337,6 +347,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF7FBD91EA9CFC900D4CC93 /* CoreLocation.framework in Frameworks */,
 				3C2B16131DEE24DE00783EC4 /* CoreMedia.framework in Frameworks */,
 				3C03A53F1DEDC706007B0DF7 /* AVFoundation.framework in Frameworks */,
 				8870DA491B5920FC0053CB1B /* libleveldb.a in Frameworks */,
@@ -368,6 +379,7 @@
 		3C03A53D1DEDC706007B0DF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AF7FBD81EA9CFC900D4CC93 /* CoreLocation.framework */,
 				3C2B16121DEE24DE00783EC4 /* CoreMedia.framework */,
 				3C03A53E1DEDC706007B0DF7 /* AVFoundation.framework */,
 			);
@@ -377,6 +389,10 @@
 		3CED67FE1E1E4CF800EF2437 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				3A2077641EE1AAB5005769ED /* carrot.png */,
+				3A20776A1EE252B3005769ED /* banana.png */,
+				3A2077651EE1AAB5005769ED /* donut.png */,
+				3A2077661EE1AAB5005769ED /* tomato.png */,
 				3CED67FF1E1E4CF800EF2437 /* greenLight.png */,
 				3CED68001E1E4CF800EF2437 /* noLight.png */,
 				3CED68011E1E4CF800EF2437 /* redLight.png */,
@@ -741,7 +757,7 @@
 				TargetAttributes = {
 					8824C79A1B505B940016CC3D = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = LFEXX25NFN;
+						DevelopmentTeam = 8TH326998K;
 					};
 					8824C7B31B505B940016CC3D = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -778,9 +794,13 @@
 				885E91A71B507651003B736E /* math_functions.cu in Resources */,
 				3CED68071E1E4D1500EF2437 /* LaunchScreen.storyboard in Resources */,
 				3CED68021E1E4CF800EF2437 /* greenLight.png in Resources */,
+				3A2077681EE1AAB5005769ED /* donut.png in Resources */,
+				3A20776B1EE252B3005769ED /* banana.png in Resources */,
 				3CED68041E1E4CF800EF2437 /* redLight.png in Resources */,
 				888C36AC1B508D300012410E /* caffe.proto in Resources */,
 				8824C7AA1B505B940016CC3D /* Main.storyboard in Resources */,
+				3A2077691EE1AAB5005769ED /* tomato.png in Resources */,
+				3A2077671EE1AAB5005769ED /* carrot.png in Resources */,
 				88BE9EE21B5763C70076137A /* model in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1004,7 +1024,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LIBRARY = "libc++";
-				DEVELOPMENT_TEAM = LFEXX25NFN;
+				DEVELOPMENT_TEAM = 8TH326998K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1022,14 +1042,14 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/TrafficLightApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/caffe/lib",
 					"$(PROJECT_DIR)/caffe/ios/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.avihay.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsheff.cashdesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/caffe/include $(SRCROOT)/caffe/ios/include";
 			};
@@ -1040,7 +1060,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LIBRARY = "libc++";
-				DEVELOPMENT_TEAM = LFEXX25NFN;
+				DEVELOPMENT_TEAM = 8TH326998K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1054,14 +1074,14 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/TrafficLightApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/caffe/lib",
 					"$(PROJECT_DIR)/caffe/ios/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.avihay.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsheff.cashdesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/caffe/include $(SRCROOT)/caffe/ios/include";
 			};

@@ -16,15 +16,20 @@ using namespace std;
     AVCaptureSession *captureSession;
     AVCaptureVideoPreviewLayer *previewLayer;
     bool isProcessing;
+    int speed;
+    NSString *previousLabel;
+    float weight;
 }
 @end
 
 @implementation ViewController
 
 NSDictionary* const labelToImage = @{
-                                     @"background": @"noLight.png",
-                                     @"green": @"greenLight.png",
-                                     @"red": @"redLight.png"
+                                     @"tomato": @"tomato.png",
+                                     @"none": @"donut.png",
+                                     @"banana": @"banana.png",
+                                     @"none": @"donut.png",
+                                     @"none": @"donut.png"
                                      };
 
 //////////////////////////////////////////////////////////////////////
@@ -32,6 +37,8 @@ NSDictionary* const labelToImage = @{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    weight = -1.0f;
     
     NSString *netDefinition = [NSBundle.mainBundle pathForResource:@"deploy"
                                                          ofType:@"prototxt"
@@ -64,6 +71,31 @@ NSDictionary* const labelToImage = @{
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+//    locationManager = [[CLLocationManager alloc] init];
+//    locationManager.delegate = self;
+//    locationManager.distanceFilter = kCLDistanceFilterNone;
+//    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+//        [self->locationManager requestAlwaysAuthorization];
+//    
+//    [locationManager startUpdatingLocation];
+//}
+//
+//- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+//    CLLocation *location = locations.lastObject;
+//    
+//    speed = (int)location.speed*60*60/1000;
+//    if (speed < 0) {
+//        speed = 0;
+//    }
+//    
+//    NSLog(@"%i", speed);
+}
+
+
+
 //////////////////////////////////////////////////////////////////////
 
 - (void)predictWithImage:(UIImage*)image;
@@ -85,6 +117,13 @@ NSDictionary* const labelToImage = @{
         NSNumber* probability = [NSNumber numberWithFloat:it->second];
         if (it == result.begin() && probability.floatValue > 0.6) {
             _lightImage.image = [UIImage imageNamed:[labelToImage valueForKey:mylabel]];
+            if (mylabel != nil) {
+//                if ([mylabel  isEqual: @"donut"]) {
+//                    mylabel = @"none";
+//                }
+                [self sendProductCode:mylabel];
+                
+            }
         }
     }
 }
@@ -114,6 +153,7 @@ NSDictionary* const labelToImage = @{
     {
         return;
     }
+    
     [captureSession addInput:input];
     
     // Create a VideoDataOutput and add it to the session
@@ -201,6 +241,24 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     CGImageRelease(quartzImage);
     
     return (image);
+}
+
+- (void) sendProductCode:(NSString*) mylabel {
+    if (![mylabel isEqualToString:previousLabel] || weight <= 0.0f){
+        weight = (float)rand() / RAND_MAX;
+    }
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://sulyak.info/api/post-goods/?code=%@&weight=%f", mylabel, weight]]];
+    
+    [request setValue: @"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+        
+    }];
+    
+    previousLabel = mylabel;
 }
 
 //////////////////////////////////////////////////////////////////////

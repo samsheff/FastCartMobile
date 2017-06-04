@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 #import "Classifier.h"
 
-@interface ViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface ViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *lightImage;
 

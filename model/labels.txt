@@ -1,3 +1,5 @@
-background
-red
-green
+banana
+money
+none
+none
+tomato
