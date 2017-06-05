@@ -16,7 +16,7 @@ Fetch OpenCV2 by running the script:
 ```
 ./download_dependencies.sh
 ```
-Download our model file from [here]() and place it in the model folder in XCode
+Download our model file from [here](https://yadi.sk/d/jiTTLKV-3JomVy) and place it in the model folder in XCode
 
 Open the XCode project and run it
 
